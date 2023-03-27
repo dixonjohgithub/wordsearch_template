@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Page Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <style>
+	.text-black {
+	  color: black;
+	}
+	
+		.my-10 {
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	}
+
+		.py-10 {
+	  padding-top: 10px;
+	  padding-bottom: 10px;
+	}
+  </style>
+    <script src="scripts.js"></script>
+
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://via.placeholder.com/50x50" alt="Logo">
+      <span class="ms-2">Example</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+		 
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="jumbotron jumbotron-fluid bg-dark text-light" style="background-size: cover; background-position: center center; padding: 100px 0;">
+  <div class="container">
+    <h1 class="display-4 text-center">Welcome to the Web Page Template</h1>
+    <p class="lead text-center">This is a sample web page template with a navigation menu, a header, and multiple tabs.</p>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="p-4 rounded bg-white">
+          <form onsubmit="handleSubmit(event)">
+            <div class="row">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" placeholder="Search Term" id="searchTerm">
+              </div>
+              <div class="col-sm-3">
+                <select class="form-select" aria-label="Language Select" onchange="checkLanguage(this.value)">
+                  <option value="English">English</option>
+                  <option value="Japanese">Japanese</option>
+                  <option value="French">French</option>
+                  <option value="Korean">Korean</option>
+                  <option value="Russian">Russian</option>
+                  <option value="Ukrainian">Ukrainian</option>
+                  <option value="Arabic">Arabic</option>
+                  <option value="Spanish">Spanish</option>
+                  <option value="English">English</option>
+                  <option value="Persian">Persian</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+				  <div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dictionaryDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="color: black; background-color: white;">
+					  Dictionaries
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dictionaryDropdown" style="background-color: white;">
+					  <li>
+						<div class="form-check">
+						  <input class="form-check-input" type="checkbox" value="apple" id="englishCheckbox">
+						  <label class="form-check-label" for="englishCheckbox">
+							Apple
+						  </label>
+						</div>
+					  </li>
+					  <li>
+						<div class="form-check">
+						  <input class="form-check-input" type="checkbox" value="banana" id="spanishCheckbox">
+						  <label class="form-check-label" for="spanishCheckbox">
+							Banana
+						  </label>
+						</div>
+					  </li>
+					  <li>
+						<div class="form-check">
+						  <input class="form-check-input" type="checkbox" value="cherry" id="frenchCheckbox">
+						  <label class="form-check-label" for="frenchCheckbox">
+							Cherry
+						  </label>
+						</div>
+					  </li>
+					  <li>
+						<div class="form-check">
+						  <input class="form-check-input" type="checkbox" value="manzana" id="manzanaCheckbox">
+						  <label class="form-check-label" for="frenchCheckbox">
+							Manzana
+						  </label>
+						</div>
+					  </li>
+					  <li>
+						<div class="form-check">
+						  <input class="form-check-input" type="checkbox" value="pomme" id="pommeCheckbox">
+						  <label class="form-check-label" for="frenchCheckbox">
+							Pomme
+						  </label>
+						</div>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+
+
+            </div>
+			<div class="row justify-content-center mt-4">
+              <div class="col-md-4 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+		  </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+ 
+			
+			
+        
+		
+
+
+  <!-- Tabs with iframes -->
+  <div class="container my-5">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">Tab 1</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">Tab 2</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">Tab 3</button>
+      </li>
+    </ul>
+    <div class="tab-content my-3">
+      <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+        <iframe src="https://www.example.com/tab1" width="100%" height="500" frameborder="0"></iframe>
+      </div>
+      <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+        <iframe src="https://www.example.com/tab2" width="100%" height="500" frameborder="0"></iframe>
+      </div>
+      <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+        <iframe src="https://www.example.com/tab3" width="100%" height="500" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+	// Define the dictionaries
+	const englishDictionary = ['apple', 'banana', 'cherry'];
+	const spanishDictionary = ['manzana', 'plátano', 'apple'];
+	const frenchDictionary = ['pomme', 'banana', 'cerise'];
+
+	function toggleCheckboxes() {
+	  var checkboxes = document.querySelectorAll('input[type=checkbox]');
+	  var selectAllCheckbox = document.querySelector('#selectAll');
+	  
+	  for (var i = 0; i < checkboxes.length; i++) {
+		checkboxes[i].checked = selectAllCheckbox.checked;
+	  }
+	}
+	
+	// Update the checkLanguage function
+	function checkLanguage(language) {
+	  // Deselect all checkboxes
+	  document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+		checkbox.checked = false;
+	  });
+	  
+
+	  // Check the checkboxes corresponding to the language dictionary
+	  if (language === 'English') {
+		englishDictionary.forEach((word) => {
+		  document.querySelectorAll(`[value="${word}"]`).forEach((checkbox) => {
+			checkbox.checked = true;
+		  });
+		});
+	  } else if (language === 'Spanish') {
+		spanishDictionary.forEach((word) => {
+		  document.querySelectorAll(`[value="${word}"]`).forEach((checkbox) => {
+			checkbox.checked = true;
+		  });
+		});
+	  } else if (language === 'French') {
+		frenchDictionary.forEach((word) => {
+		  document.querySelectorAll(`[value="${word}"]`).forEach((checkbox) => {
+			checkbox.checked = true;
+		  });
+		});
+	  }
+	}
+	
+	function handleSubmit(event) {
+	  event.preventDefault(); // prevent default form submission behavior
+
+	  const searchTerm = document.getElementById('searchTerm').value;
+	  alert('Search term:', searchTerm);
+	  const language = document.querySelector('select').value;
+	  const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+	  const selectedWords = Array.from(checkboxes).map((checkbox) => checkbox.value);
+
+	 
+	  alert('Language:', language);
+	  alert('Selected words:', selectedWords);
+	}
+
+</script>
+</body>
+</html>
+
+
