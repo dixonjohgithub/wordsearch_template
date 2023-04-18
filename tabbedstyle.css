@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.threshold-exceeded {
+    background-color: rgb(236, 102, 102) !important;
+}
+
+.tested-true {
+    background-color: rgb(170, 203, 243) !important;
+}
+
+
+
+.csv-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.csv-table th,
+.csv-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.csv-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.download-btn {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.btn-custom {
+    background-color: black !important;
+    color: white !important;
+    border: 2px solid white !important;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: #333 !important;
+    color: white !important;
+    border-color: #999 !important;
+}
+
+.btn-custom:active,
+.btn-custom.active {
+    background-color: #222;
+    color: white;
+    border-color: #777;
+}
